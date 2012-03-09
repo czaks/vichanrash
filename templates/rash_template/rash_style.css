@@ -1,0 +1,66 @@
+/*
+RQMS - Rash Quote Management System
+Copyright (C) 2003-2004 Tom Cuchta (tommah@instable.net / http://www.mastergoat.com) and Instable Network (p00p@instable.net / http://www.instable.net)
+
+http://rqms.sourceforge.net
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+body, div#content_format, div#frontpage_left, div#frontpage_right, div.news_post_format, input.grey_input, span.news_date, table#news_format, td.grey_bar, td.blue_bar, textarea.grey_textarea{
+	font-size: 10pt;
+	font-family: Verdana, Tahoma, sans-serif;
+	color: #000000;
+}
+a, a#admin_link, a:link, a:visited{
+	color: #336699;
+}
+a#admin_link:hover, a:hover, a:visited:hover{
+	color: #c08000;
+}
+a#log_out, div#rash_version, div#section, input, select, span#qms{
+	color: #ffffff;
+}
+div#rash_version, div#section, td.grey_bar{
+	text-align: right;
+}
+div#content_format, table.bars_table{
+	margin-left: 92pt;
+	width: 80%;
+}
+div#frontpage_right{
+    border-right-width: 0px;
+	border-left-width: 3px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	padding-left: 3px;
+	border-color: #447821;
+	border-style: solid;
+}
+div.quote_output{
+	font-family: "Courier New", Courier, monospace;
+	margin-bottom: 18px;
+	padding-top: 3px;
+	background-color: #e4ffd1;
+}
+div#section, span#admin_pchange, span.news_date, span.qotw_date{
+	font-weight: bold;
+}
+div#section, span.admin_sheader, span#qms{
+	font-size: 15pt;
+}
+input, select, td.blue_bar{
+	background-color: #447821;
+}
+input.grey_input, input.grey_radio, td.grey_bar, textarea.grey_textarea{
+	background-color: #b3ff80;
+}
+span#qms{
+	font-style: italic;
+}
+div.topof {
+	background-color: #ccffaa;
+}

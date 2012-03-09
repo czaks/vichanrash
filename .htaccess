@@ -1,0 +1,14 @@
+Options +SymlinksIfOwnerMatch 
+RewriteEngine On
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} !cytaty.6irc.net
+#RewriteRule ^(.*)$ http://cytaty.6irc.net/$1 [R=301,L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/*$ index.php?$1 [PT,L,QSA,E=pen:is]
+
+#RewriteCond %{ENV:pen} =is
+#RewriteCond %{QUERY_STRING} ^(.+)$
+#RewriteRule .* /%1/? [L,R=301]

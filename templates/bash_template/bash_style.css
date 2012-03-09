@@ -1,0 +1,67 @@
+/*
+RQMS - Rash Quote Management System
+Copyright (C) 2003-2004 Tom Cuchta (tommah@instable.net / http://www.mastergoat.com) and Instable Network (p00p@instable.net / http://www.instable.net)
+
+http://rqms.sourceforge.net
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+body{
+	font-family: arial, helvetica, sans-serif;
+	font-size: smaller;
+	color: #000000;
+}
+a, a:link, a:visited{
+	color: #c08000;
+}
+.basicinput{
+	background-color: #f0f0f0;
+}
+.basicsubmit{
+	background-color: #c08000;
+}
+.frontpage_left{
+    width: 50%;
+}
+.frontpage_right{
+	border-right-width: 0px;
+	border-left-width: 3px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	border-color: #c08000;
+	border-style: solid;
+	vertical-align: top;
+	width: 50%;
+}
+.quote_output{
+	font-family: "Courier New", Courier, monospace;
+	padding-bottom: 15px;
+}
+.frontpage_greeting, .news_date{
+	font-weight: bold;
+}
+.bottom_bars{
+	width: 80%;
+	padding: 2px 2px 2px 2px;
+	border: 0px;
+	border-collapse: collapse;
+}
+.bar_search{
+	background-color: #f0f0f0;
+}
+.qms{
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+}
+.section{
+	font-weight: bold;
+ 	font-size: 21px;
+}
+.orange_bar{
+	background-color: #c08000;
+}

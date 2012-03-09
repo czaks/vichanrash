@@ -1,0 +1,10 @@
+<insert crazy ascii image + legal shit up here, yay boring>
+
+
+In order to install rash:
+1. Upload all .php and .html files to your webserver. You'll probably want to denote it to its own directory.
+2. Run install.html inside the directory where you've uploaded the files through a web browser of your choice.
+3. Read the instructions of what tables.php will do and how you need to edit config.php, and follow the link.
+4. Delete install.html and tables.php from your server for security reasons.
+5. Change administrator password.
+6. Insert quotes.

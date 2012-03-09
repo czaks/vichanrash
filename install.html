@@ -1,0 +1,46 @@
+<!--
+/*
+RQMS - Rash Quote Management System
+Copyright (C) 2003-2004 Tom Cuchta (tommah@instable.net / http://www.mastergoat.com) and Instable Network (p00p@instable.net / http://www.instable.net)
+
+http://rqms.sourceforge.net
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>
+    Rash Quote Management System
+  </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+ </head>
+ <body>
+  <p>Welcome to the Rash Quote Management System system guide and MySQL table setup. This is the first release of our program to the world, so please bear with the shoddy coding and whatever bugs you may find. It would be wonderful if you submitted any bugs to our <a href="http://www.sourceforge.net/projects/rqms">Sourceforge website</a>. For those of you who don't know what Rash is, it's a quote management system that is the best copy of Bash.org's layout I could achieve with minimal PHP skills.</p>
+    <p>
+     1. Open config.php in a text editor, yes, we have to edit some variables and such to make it work, what a shame!<br />
+     2. If you need to, change the value of $hostname from localhost to something else, be sure to keep whatever it is enclosed in single quotes. Hostname is the host of your mysql server, in most cases (if it's hosted on the same server as your web server) it will be localhost.<br />
+	 3. Change the value of $username to the name that you use to gain entry to your database. So if your login name for your database is Joe, you would put Joe inbetween the single quotes.<br />
+	 4. $dbpasswd is the password used in conjunction with the username that gets your entry to your database.<br />
+	 5. $dbname is the name of the database that you are logging into, or if there is more than one database under that username, the one you want rash to use.<br />
+	 6. $subtable should be left alone unless you want to test something, or for some reason want the submit quotes table to be something other than rash_submit<br />
+	 7. $quotetable is the table used to store all the quotes that are approved in the administration section, you may change the name of that table by editing this variable<br />
+	 8. $rashusers is the table that stores the users that you approve to use your administration section, change it's name here if you want to<br />
+	 9. $newstable is the table that stores your front page news, change the value of the variable to change the name of the table<br />
+	 10. $email is the e-mail address that shows up on the front page to email problems about YOUR site to<br />
+	 11. The customizations below $email should be edited after you get the system working and running. You can change things like colors, fonts, and errors in the customizations.</p>
+	<p>
+	 You have that all done? Good! We're going to proceed to the MySQL tables installation. After that you should delete this and the tables.php files from your server to ensure no one can do anything malicious with your setup.
+	</p>
+	<p>
+	 After you click the following link button, you give the install script permission to install the tables you specified in config.php.<br />
+	 <a href="tables.php">Install the Rash Quote Management System Tables</a>
+   </p>
+  </body>
+ </html>

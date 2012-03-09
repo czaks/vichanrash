@@ -1,0 +1,75 @@
+<?php
+error_reporting(E_ALL ^ (E_NOTICE | E_DEPRECATED));
+/*
+RQMS - Rash Quote Management System
+Copyright (C) 2003-2004 Tom Cuchta (tommah@instable.net / http://www.mastergoat.com) and Instable Network (p00p@instable.net / http://www.instable.net)
+
+http://rqms.sourceforge.net
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+
+//#######
+//   First Section - Main Rash Configuration: You MUST configure this section.
+//#######
+
+$hostname		= 'localhost';				// ip address or fully qualified domain name of your mysql server
+$username		= '';					// your/rash's mysql username
+$dbpasswd		= '';				// your/rash's mysql password
+$dbname			= '';					// the mysql database in which rash will store its information
+$email			= 'admin@example.com';	// rash admin email address
+
+//
+// The following four options will not need to be changed under normal circumstances. 
+//
+$subtable		= 'rash_submit';			// where user-submitted quotes are stored
+$quotetable		= 'rash_quotes';			// where the main quotes are stored
+$rashusers		= 'rash_users';				// where the user database is stored
+$newstable		= 'rash_news';				// where the news posts are stored
+$commentstable		= 'chaxbranch_comments';
+$GET_SEPARATOR  = ';';//ini_get('arg_separator.output');						// thanks Tiddles, this code gets a seperator that your site may or may not need specially from a regular &amp;. It would be a marvelous idea to leave this be.
+$GET_SEPARATOR_HTML = ';';//htmlspecialchars($GET_SEPARATOR, ENT_QUOTES);		// thanks Tiddles, this code gets a seperator that your site may or may not need specially from a regular &amp;. It would be a marvelous idea to leave this be.
+
+//######
+//   Second Section - Customization
+//######
+
+$templatefile		= './templates/rash_template/rash_template.php';		// path to the file for your rash template; the default can be modified without changing this option, or another file can be specified here instead
+$admin_template		= './templates/rash_template/rash_admin.php';			// path to the admin file template
+$outputfile	    	= './templates/rash_template/rash_output.php';				// path to the file that stores the html for the outputs of the rash program
+$newslimit	    	= '5';						// limit of how many news posts are displayed (if you use news in your template, you may want to use this variable)
+$cookie_time    	= '1';						// number of seconds you want a cookie to last before being automatically terminated, allowing the user to do whtever they did to get it (upgrade, downgrade, flag quote, add quote)
+
+//######
+//	Third Section - Error Messages
+//######
+$noservercnx     	= "Nie można się połączyć do serwera bazy danych.";	// error that outputs if rash cannot connect to what mysql server is specified in this file
+$nodbcnx    		= "Nie można otworzyć bazy danych.";	// error that outputs if the server can be connected to, but the database cannot be opened
+$queryerror     	= "Wystąpił błąd przy przetwarzaniu zapytania. Oznacza to, że wystąpił problem z bazą danych, która... nie zrozumiała o czym program do niej mówi!";					// error that outputs if the mysql server rejects a query that is erroneous, if you get one of these PLEASE send an e-mail to tommah@instable.net, with as much detail about it so it can be replicated and fixed
+$loginfail	    	= "Błąd w logowaniu.";					// error that outputs if there is a time that one would need to be logged in, but isn't
+$not_logged_in  	= "Błąd: nie jesteś zalogowany/a";	// error that outputs if anyone tries to do something that requires being logged in to do, and isn't logged in
+$cookie_already_set = "Musisz zaczekać " . $cookie_time . " sekund, by to zrobić, od czasu, kiedy dokonałeś/aś ostatniego żądania.";	// error that outputs if a cookie that limits user activity stops a user, like multiple rating upgrades
+$no_userlevel_set	= "Nie wybrałeś poziomu dla nowego uzytkownika.";		//	error if the user level is not set when adding a new user
+$no_username_set	= "Nie dałeś nazwy nowego użytkownika.";	//	error if the username is not set when adding a new user
+$password_mismatch	= "Hasła nie pasują, wpisz ponownie.";	// error if the two passwords submitted to change a user's password do not match (it's verification)
+$quote_deleted		= "Cytat usunięty z bazy danych.";	// confirmation of deletion of a quote submitted by a normal-internet surfer
+
+//######
+//  Fourth Section - Confirmation Messages
+//######
+$log_back_in		    = "Zaloguj się ponownie, aby zweryfikować, czy zmiana się powiodła.";		// tells user to log back in to verify user changes are correct, such as password changes
+$deflag_confirm		    = "Flaga została usunięta pomyślnie.";		// response you get when you take the flag status from a quote, which means checking to make sure it's good after it's been submitted and accepted by someone before
+$approve_quote_confirm	= "Cytat zatwierdzony i dodany do bazy danych.";	// confirmation of addition of a normal-internet surfer's submitted quote
+$add_news_confirm	    = "News dodany pomyślnie!";		//	confirmation of addition of a news post via administration panel
+$add_user_confirm	    = "Użytkownik dodany pomyślnie!";		//	confirmation of addition of a user via the administration panel
+$upgrade_confirm	    = "Cytat został oceniony pomyślnie."; // confirmation that outputs when a rating is upgraded successfully
+$downgrade_confirm	    = "Cytat został oceniony pomyślnie.";	// confirmation that outputs when a rating is downgraded successfully
+$flag_confirm		    = "Flaga została dodana pomyślnie.";		// confirmation that a quote was flagged successfully
+$admin_del_confirm	    = "Cytat usunięty pomyślnie!";	// confirmation that outputs when an admin deletes a quote with ?adelete
+$quote_update_confirm	= "Cytat zaktualizowany pomyślnie.";	// confirmation for aedit
+$news_update_confirm	= "News zaktualizowany pomyślnie!";		// confirmation for news_edit
+?>

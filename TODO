@@ -1,0 +1,11 @@
+Word wrap shit
+
+Documentation -- BEING WORKED ON KINDA
+
+Add a feature to login_check to take into consideration user levels. Would be called with login_check(0 or 1, #), # represeting the lowest user level that is allowed to access a particular feature. As of now, user levels are pretty limited. -- FOR 1.3
+Make the search page look a little nicer -- ehhhh
+Create one or two more templates -- BEN RACHE_TEMPLATE
+
+Installer -- 1.3!!
+Uninstaller -- 1.3!!
+Upgrade Script -- NO
