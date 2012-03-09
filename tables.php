@@ -31,25 +31,64 @@ if (! @mysql_select_db("$dbname") ) {
 	exit();
 }
 
-$sql = 'CREATE TABLE `' . $subtable . '` ( `id` INT NOT NULL AUTO_INCREMENT , `quote` TEXT NOT NULL , PRIMARY KEY ( `id` ) );';
+$sql = 'CREATE TABLE `' . $subtable . '` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `quote` text NOT NULL,
+  PRIMARY KEY (`id`)
+);';
 mysql_query($sql)
 	or die("The table " . $subtable . " did not create succesfully, this is the error outputted by the sql server: " . mysql_error());
 echo "Victory! " . $subtable . " submit table has been installed successfully!<br />";
 
-$sql = 'CREATE TABLE `' . $rashusers . '` ( `id` INT NOT NULL AUTO_INCREMENT , `user` TEXT NOT NULL , `password` TEXT NOT NULL , `level` INT NOT NULL , PRIMARY KEY ( `id` ) ) ;';
+$sql = 'CREATE TABLE `' . $rashusers . '` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` text NOT NULL,
+  `password` text NOT NULL,
+  `level` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ;';
 mysql_query($sql)
 	or die("The table " . $rashusers . " did not create succesfully, this is the error outputted by the sql server: " . mysql_error());
 echo "Victory! " . $rashusers . " has been installed successfully! Two more to go!<br />";
-$sql = 'CREATE TABLE `' . $quotetable . '` ( `id` INT NOT NULL AUTO_INCREMENT , `quote` TEXT NOT NULL , `rating` INT NOT NULL , `approve` INT NOT NULL , `check` INT NOT NULL , `date` INT NOT NULL , PRIMARY KEY ( `id` ) );';
+$sql = 'CREATE TABLE `' . $quotetable . '` ( 
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `quote` text NOT NULL,
+  `rating` int(11) NOT NULL,
+  `approve` int(11) NOT NULL,
+  `check` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+);';
 mysql_query($sql)
 	or die("The table " . $quotetable . " did not create succesfully, this is the error outputted by the sql server: " . mysql_error());
 echo "Victory! " . $quotetable . " has been created! One more to go!<br />";
-$sql = 'CREATE TABLE `' . $newstable . '` ( `id` INT NOT NULL AUTO_INCREMENT , `news` TEXT NOT NULL , `date` DATE NOT NULL , PRIMARY KEY ( `id` ) ) ;';
+$sql = 'CREATE TABLE `' . $newstable .  '` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `news` text NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ;';
 mysql_query($sql)
-	or die("The table " . $newstable . " did not create succesfully, this is the error outputted by the sql server: " . mysql_error());
-echo "Victory! " . $newstable . " has been created!<br />";
+	or die("The table " . $commentstable . " did not create succesfully, this is the error outputted by the sql server: " . mysql_error());
+echo "Victory! " . $commentstable . " has been created!<br />";
+$sql = 'CREATE TABLE `' . $commentstable . '` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `of` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `passwd` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `ts` int(11) NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `of` (`of`),
+  KEY `ts` (`ts`,`ip`)
+) ;';
+mysql_query($sql)
+	or die("The table " . $commentstable . " did not create succesfully, this is the error outputted by the sql server: " . mysql_error());
+echo "Victory! " . $commentstable . " has been created!<br />";
 
-$sql = 'INSERT INTO `' . $rashusers . '` ( `id` , `user` , `password` , `level` ) VALUES ( \'\', \'administrator\', \'5f4dcc3b5aa765d61d8327deb882cf99\', \'1\' );';
+$sql = 'INSERT INTO `' . $rashusers . '` (
+`id` , `user` , `password` , `level` ) VALUES ( \'\', \'administrator\', \'5f4dcc3b5aa765d61d8327deb882cf99\', \'1\' );';
 mysql_query($sql)
 	or die("Fuck<Br />" . mysql_error());
 echo "Well, I guess it worked?<br />"
