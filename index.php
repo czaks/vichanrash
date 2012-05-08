@@ -16,8 +16,8 @@ include($templatefile);
 include($admin_template);
 include($outputfile);
 $versionnumber  = "1.2.1";
-$subversion    = "-vichanrash1.0.0";
-$rashversion    = $versionnumber . $subversion;
+$subversion    = "-vichanrash1.0.1";
+$rashversion    = $versionnumber . "<a href='https://github.com/czaks/vichanrash' style='color: inherit;'>" . $subversion . "</a>";
 
 setcookie('cen', 'nec', time() + 3600 * 24 * 31 * 6, '/', '.cytaty.6irc.net');
 /*
